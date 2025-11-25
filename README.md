@@ -1,46 +1,193 @@
-# Getting Started with Create React App
+# Meta Technical Certification Practice Exam
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+An interactive practice test application for the Meta WhatsApp Business Platform Technical Certification. This web-based quiz helps developers prepare for the Meta certification by providing a realistic testing environment with instant feedback and performance analytics.
 
-## Available Scripts
+## 📋 About
 
-In the project directory, you can run:
+This practice exam simulates the Meta Technical Certification test environment and covers key topics including:
+- Message Templates
+- Webhooks
+- Click-to-WhatsApp (CTWA) Ads
+- WhatsApp Flows
+- Message Quality & Delivery
+- Phone Number & WABA Management
+- Embedded Signup
+- Opt-in & User Consent
+- Cloud vs On-Premise Hosting
 
-### `npm start`
+## ✨ Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### 🎯 Interactive Quiz Experience
+- **One Question at a Time**: Focused testing experience with single question display
+- **Randomized Questions**: Questions are shuffled each session
+- **Randomized Answers**: Answer options are randomized to prevent pattern memorization
+- **Progress Tracking**: Visual progress bar showing completion status
+- **Navigation**: Move forward and backward through questions
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### 📊 Comprehensive Results
+- **Overall Score**: Instant scoring with percentage calculation
+- **Performance by Topic**: Detailed breakdown showing your strengths and weaknesses
+- **Color-Coded Results**: Visual indicators for good (70%+), okay (50-69%), and needs work (<50%) performance
+- **Question Review**: See all questions with your answers and correct solutions
+- **Detailed Explanations**: For incorrect answers, view what you selected vs. the correct answer
 
-### `npm test`
+### 💎 Modern UI/UX
+- Clean, professional design
+- Responsive layout (works on desktop, tablet, and mobile)
+- Smooth animations and transitions
+- Gradient color schemes
+- Intuitive navigation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🚀 Getting Started
 
-### `npm run build`
+### Prerequisites
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Make sure you have the following installed:
+- [Node.js](https://nodejs.org/) (v14 or higher)
+- npm (comes with Node.js)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Clone the repository or download the project:
+```bash
+git clone <repository-url>
+cd meta-quiz
+```
 
-### `npm run eject`
+2. Install dependencies:
+```bash
+npm install
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Running the Application
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Start the development server:
+```bash
+npm start
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+The application will open in your default browser at [http://localhost:3000](http://localhost:3000)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+If it doesn't open automatically, navigate to the URL manually.
 
-## Learn More
+### Building for Production
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+To create an optimized production build:
+```bash
+npm run build
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The build files will be created in the `build/` folder and are ready to be deployed to any static hosting service.
+
+## 📁 Project Structure
+
+```
+meta-quiz/
+├── public/              # Static files
+├── src/
+│   ├── App.tsx         # Main app component
+│   ├── Quiz.tsx        # Quiz component with all logic
+│   ├── Quiz.css        # Styling for quiz
+│   ├── questions.ts    # Question bank and scoring logic
+│   ├── index.tsx       # Entry point
+│   └── ...
+├── package.json        # Dependencies and scripts
+└── README.md          # This file
+```
+
+## 📝 Adding More Questions
+
+To add new questions to the quiz, edit `src/questions.ts`:
+
+```typescript
+{
+  id: 99,  // Unique ID
+  question: "Your question text here?",
+  options: [
+    "Option A",
+    "Option B",
+    "Option C",
+    "Option D"
+  ],
+  correctAnswers: ["Option B"],  // Array of correct answers
+  topics: ["Topic Name"]  // Array of topic tags
+}
+```
+
+### Question Format Rules:
+- Each question must have a unique `id`
+- Support for single or multiple correct answers
+- Use `"(Choose two.)"` or similar in the question text for multi-select questions
+- Topics help categorize questions for performance analytics
+
+### Current Question Pool:
+- The app randomly selects 20 questions from a pool of 38+ questions
+- Questions and answers are shuffled each session for variety
+
+## 🛠️ Technologies Used
+
+- **React** (v18) - UI framework
+- **TypeScript** - Type-safe JavaScript
+- **CSS3** - Styling with gradients, flexbox, and grid
+- **Create React App** - Build tooling
+
+## 🎨 Key Components
+
+### Quiz Component (`Quiz.tsx`)
+- Manages quiz state and navigation
+- Handles answer selection and validation
+- Calculates scores and topic performance
+- Renders different views (home, quiz, results)
+
+### Questions Module (`questions.ts`)
+- Contains the question bank
+- Shuffling logic for questions and answers
+- Scoring functions
+- Topic performance calculations
+
+## 📊 Quiz Flow
+
+1. **Home Page**
+   - Welcome screen with test information
+   - Shows total number of questions
+   - "Start Test" button
+
+2. **Quiz Page**
+   - One question displayed at a time
+   - Progress bar and counter
+   - Checkbox selection for answers
+   - Previous/Next navigation buttons
+   - Submit button on final question
+
+3. **Results Page**
+   - Overall score with percentage
+   - Performance breakdown by topic
+   - Visual progress bars for each topic
+   - Detailed question-by-question review
+   - Shows correct answers for missed questions
+   - "Restart Quiz" button
+
+## 🎯 Best Practices for Taking the Quiz
+
+- Read each question carefully
+- Note questions marked with "(Choose two.)" for multiple selections
+- Use the Previous button to review earlier questions
+- Take your time - there's no time limit
+- Review the topic performance dashboard to identify areas for improvement
+- Retake the quiz to practice with different question sets
+
+## 📄 License
+
+This project is for educational purposes.
+
+## 🤝 Contributing
+
+To contribute additional questions or improvements:
+1. Fork the repository
+2. Add questions to `questions.ts`
+3. Test thoroughly
+4. Submit a pull request
+
+---
+
+Built with ❤️ for Meta WhatsApp Business Platform certification preparation
