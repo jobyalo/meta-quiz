@@ -79,6 +79,69 @@ npm run build
 
 The build files will be created in the `build/` folder and are ready to be deployed to any static hosting service.
 
+## 🚀 Deploying to GitHub Pages
+
+This project is configured for easy deployment to GitHub Pages.
+
+### Prerequisites
+- A GitHub account
+- Git installed on your computer
+- Your project pushed to a GitHub repository
+
+### Deployment Steps
+
+1. **Create a GitHub repository** (if you haven't already):
+   - Go to [GitHub](https://github.com) and create a new repository
+   - Name it `meta-quiz` (or any name you prefer)
+
+2. **Update the homepage URL** in `package.json`:
+   ```json
+   "homepage": "https://YOUR-USERNAME.github.io/YOUR-REPO-NAME"
+   ```
+   Replace `YOUR-USERNAME` with your GitHub username and `YOUR-REPO-NAME` with your repository name.
+
+3. **Push your code to GitHub** (if not already done):
+   ```bash
+   git init
+   git add .
+   git commit -m "Initial commit"
+   git branch -M main
+   git remote add origin https://github.com/YOUR-USERNAME/YOUR-REPO-NAME.git
+   git push -u origin main
+   ```
+
+4. **Deploy to GitHub Pages**:
+   ```bash
+   npm run deploy
+   ```
+
+   This command will:
+   - Build your project
+   - Create a `gh-pages` branch
+   - Push the build files to that branch
+   - Your site will be live in a few minutes!
+
+5. **Access your deployed site**:
+   - Visit: `https://YOUR-USERNAME.github.io/YOUR-REPO-NAME`
+   - Example: `https://jobmendez.github.io/meta-quiz`
+
+### Updating Your Deployed Site
+
+Whenever you make changes and want to update the live site:
+
+```bash
+git add .
+git commit -m "Your update message"
+git push
+npm run deploy
+```
+
+### Troubleshooting
+
+- **404 Error**: Make sure the `homepage` field in `package.json` matches your GitHub Pages URL
+- **Blank Page**: Check the browser console for errors and ensure the homepage URL is correct
+- **Not Updating**: Clear your browser cache or wait a few minutes for GitHub Pages to update
+
 ## 📁 Project Structure
 
 ```
